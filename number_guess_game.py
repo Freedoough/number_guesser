@@ -10,7 +10,7 @@ def intro():    # Intro function that introduces the game and prompts for user n
     
     user_name = input("First, enter your first name: ")
     
-    while True:
+    while True: # Loop that allows user to try again
 
         number = generate_number()
     
@@ -21,7 +21,7 @@ def intro():    # Intro function that introduces the game and prompts for user n
         if try_again == "N":
             print("Thanks for playing!\n")
             break
-    #return user_name
+    
 
 
 
