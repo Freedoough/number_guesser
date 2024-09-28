@@ -10,11 +10,18 @@ def intro():    # Intro function that introduces the game and prompts for user n
     
     user_name = input("First, enter your first name: ")
     
-    number = generate_number()
+    while True:
+
+        number = generate_number()
     
-    user_guess(user_name, number)
+        user_guess(user_name, number)
     
-    return user_name
+        try_again = input("Try again? y/n : ").capitalize()
+
+        if try_again == "N":
+            print("Thanks for playing!\n")
+            break
+    #return user_name
 
 
 
@@ -48,29 +55,11 @@ def you_lose(number): # Tells user they lost and prompts to try again
     print("Not quite, the correct number was: ", number)
     time.sleep(.5)
 
-    try_again = input("Try again? y/n : ").capitalize()
-
-    if try_again == "Y":
-        intro()
-
-    elif try_again == "N":
-        print("Thanks for playing!\n")
-        exit()
-
 
 def you_win(user_name): # Tells user they won and prompts to try again
     user_name = user_name
     print("Congrats " + user_name + ", you win!")
     time.sleep(1)
     
-    try_again = input("Try again? y/n : ").capitalize()
-
-    if try_again == "Y":
-        intro()
-
-    elif try_again == "N":
-        print("Thanks for playing!\n")
-        exit()
-
 
 intro()
